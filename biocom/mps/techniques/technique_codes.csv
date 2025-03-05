@@ -1,0 +1,148 @@
+ID,Code,Name
+1,Pdyn,Potentiodynamic Pitting
+2,CPol,Cyclic Polarization
+3,MUIC,Measure of U-I Correlation
+4,GCPL,Galvanostatic Cycling with Potential Limitation
+5,PCGA,Potentiodynamic Cycling with Galvanostatic Acceleration
+6,CV,Cyclic Voltammetry
+7,PotPit,Potentiostatic Pitting
+8,PR,Polarization Resistance
+9,PC,Potential Manual Control
+10,ZVC,Zero Voltage Current
+11,OCV,Open Circuit Voltage
+12,GCPL2,Galvanostatic Cycling with Potential Limitation 2
+13,NPV,Normal Pulse Voltammetry
+14,SPFC,Stepwise Potential Fast Chronoamperometry
+15,RNPV,Reverse Normal Pulse Voltammetry
+16,APGC,Alternate Pulse Galvano Cycling
+17,CPT,Critical Pitting Temperature 1
+18,ECN,Electrochemical Noise (ASTM-G199)
+19,GCPL3,Galvanostatic Cycling with Potential Limitation 3
+20,DP,Depassivation Potential
+21,MG,Modular Galvano
+22,MP,Modular Potentio
+23,CPP,Cyclic Potentiodynamic Polarization (ASTM-G61)
+24,CA,Chronoamperometry / Chronocoulometry
+25,CP,Chronopotentiometry
+26,IC,Current Manual Control
+27,Loop,Loop
+28,WAIT,Wait
+29,PEIS,Potentio Electrochemical Impedance Spectroscopy
+30,GEIS,Galvano Electrochemical Impedance Spectroscopy
+31,CPT2,Critical Pitting Temperature 2 (ASTM-G150)
+32,LPR,Linear Polarization Resistance (ASTM-G59)
+33,GCPL4,Galvanostatic Cycling with Potential Limitation 4
+34,DPV,Differential Pulse Voltammetry
+35,CLD,Constant Load Discharge
+36,CPW,Constant Power
+37,GCPL5,Galvanostatic Cycling with Potential Limitation 5
+38,TO,Trigger Out
+39,TI,Trigger In
+40,SV,Staircase Voltammetry
+41,SOCV,Special Open Circuit Voltage
+42,SMP,Special Modular Potentio
+43,SMG,Special Modular Galvano
+44,SGCPL,Special Galvanostatic Cycling with Potential Limitation
+45,SPEIS,Staircase Potentio Electrochemical Impedance Spectroscopy (Mott-Schottky)
+46,SGEIS,Staircase Galvano Electrochemical Impedance Spectroscopy
+47,SWV,Square Wave Voltammetry
+48,EVT,Ecorr vs. Time
+49,CM,Corrosimetry (Rp vs. Time)
+50,ZIR,IR compensation (PEIS)
+51,CVA,Cyclic Voltammetry Advanced
+52,DNPV,Differential Normal Pulse Voltammetry
+53,DPA,Differential Pulse Amperometry
+54,CA,Chronoamperometry
+55,OCV,Open Circuit Voltage
+56,CP,Chronopotentiometry
+57,CV,Cyclic Voltammetry
+58,PDYN,Potentiodynamic
+59,GDYN,Galvanodynamic
+60,PEIS,Potentio Electrochemical Impedance Spectroscopy
+61,GEIS,Galvano Electrochemical Impedance Spectroscopy
+62,SPEIS,Staircase Potentio Electrochemical Impedance Spectroscopy
+63,SGEIS,Staircase Galvano Electrochemical Impedance Spectroscopy
+64,PEIS,Potentio Electrochemical Impedance Spectroscopy on Stack
+65,GEIS,Galvano Electrochemical Impedance Spectroscopy on Stack
+66,PDYN,Potentiodynamic on Stack
+67,GDYN,Galvanodynamic on Stack
+68,LOOP,Loop
+69,CV,ADV Cyclic Voltammetry Advanced
+70,DPV,Differential Pulse Voltammetry
+71,SWV,Square Wave Voltammetry
+72,NPV,Normal Pulse Voltammetry
+73,RNPV,Reverse Normal Pulse Voltammetry
+74,DNPV,Differential Normal Pulse Voltammetry
+75,DPA,Differential Pulse Amperometry
+76,EVT,Ecorr vs. Time
+77,LP,Linear Polarization
+78,GC,Generalized Corrosion
+79,CPP,Cyclic Potentiodynamic Polarization
+80,PDP,Potentiodynamic Pitting
+81,PSP,Potentiostatic Pitting
+82,ZRA,Zero Resistance Ammeter
+83,MIR,Manual IR
+84,PZIR,IR Determination with Potentiostatic Impedance
+85,GZIR,IR Determination with Galvanostatic Impedance
+86,MIR,Manual IR compensation
+87,PEISW,Potentio Electrochemical Impedance Spectroscopy Wait
+88,TI,Trigger In
+89,TO,Trigger Out
+90,TOS,Trigger Set
+91,LASV,Large Amplitude Sinusoidal Voltammetry
+92,ACV,AC Voltammetry
+93,VASP,Variable Amplitude Sinusoidal micro Polarization
+94,MUX,Multiplexer
+95,CASP,Constant Amplitude Sinusoidal micro Polarization
+96,CP,L Chronopotentiometry with limits
+97,GDYN,L Galvanodynamic with limits
+98,CA,L Chronoamperometry with limits
+99,PDYN,L Potentiodynamic with limits
+100,ABS,Absorbance
+101,FLUO,Fluorescence
+102,GPI,Galvano Profile Importation
+103,PPI,Potentio Profile Importation
+104,RPI,Resistance Profile Importation
+105,PWPI,Power Profile Importation
+106,LASV,Large Amplitude Sinusoidal Voltammetry
+107,CI,Current Interrupt
+108,LSV,Linear Sweep Voltammetry
+109,MUX,LP Multiplexer Loop
+110,IVC,I-V Characterization
+111,TC,Temperature Control
+112,RDEC,Rotating Disk Electrode Control
+113,DABS,Dual Absorbance
+114,ABS,F Absorbance/Fluorescence
+115,Pause,Pause
+116,EDC,External Device Control
+117,CstV,Constant Voltage
+118,CstC,Constant Current
+119,GCPL6,Galvanostatic Cycling with Potential Limitation 6
+120,CV_CA,Bipotentiostat CV & CA
+121,CP_CA,Bipotentiostat CP & CA
+122,CA_CA,Bipotentiostat CA & CA
+123,MP,Modular Pulse
+124,CV,Lin Cyclic Voltammetry Linear
+125,CASG,Constant Amplitude Sinusoidal Galvanopolarization
+126,LASV,Constant Amplitude Sinusoidal Polarization
+127,MB,Modulo Bat
+128,VASP,Variable Amplitude Sinusoidal Polarization
+129,OCV,F Fast Open Circuit Voltage
+130,CA,F Fast Chronoamperometry
+131,CP,F Fast Chronopotentiometry
+132,GCPL7,Galvanostatic Cycling with Potential Limitation 7
+133,CV,Lin Cyclic Voltammetry Linear
+134,STCC,Special Technique ChronoCoulometry
+135,RCA,Ring Chronoamperometry
+136,BCD,Battery Capacity Determination
+137,CVL,Cyclic Voltammetry Linear
+138,EXTAPP,External Application
+139,EMAIL,Send E-Mail
+140,CS,Current Scan
+141,CED,Coulombic Efficiency Determination
+142,EVANS,Evans diagram
+143,TP,Tafel Plot
+144,BECN,Biased Electrochemical Noise
+145,Sync,Synchronization
+146,RP,Repassivation potential (JIS0592)
+147,GalC,Galvanic Coupling (ASTM-G71)
