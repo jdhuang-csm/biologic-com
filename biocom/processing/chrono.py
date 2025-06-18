@@ -180,7 +180,7 @@ def downsample_data(
         decimation_factor: float = 2.0, 
         max_interval: Optional[float] = None,
         antialiased: bool = True, 
-        remove_short_samples: bool = False,
+        remove_short: bool = False,
         remove_outliers: bool = True,
         outlier_prior: float = 0.01,
         outlier_thresh: float = 0.75,
@@ -188,7 +188,7 @@ def downsample_data(
         ) -> Tuple[Tuple[ndarray, ndarray, ndarray], ndarray]:
 
     # Remove short time steps
-    if remove_short_samples:
+    if remove_short:
         times, i_signal, v_signal = remove_short_samples(times, np.array([times, i_signal, v_signal]).T).T
         
     if stepwise:

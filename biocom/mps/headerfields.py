@@ -293,12 +293,12 @@ ActiveMass = MultivalueField(
     value_separators=["\n "],
     value_units=["mg", None]
 )
-MolecularWeight = HeaderField("Molecular weight of active material (at x=0)", units="g/mol")
+MolecularWeight = HeaderField("Molecular weight of active material (at x = 0)", units="g/mol")
 AtomicWeight = HeaderField("Atomic weight of intercalated ion", units="g/mol")
-AcquisitionStart = HeaderField("Aquisition started at: x0 = ", separator="")
+AcquisitionStart = HeaderField("Acquisition started at : xo = ", separator="")
 NumElectrons = HeaderField("Number of e- transfered per intercalated ion", precision=0)
 DxDq = HeaderField("for DX = 1, DQ = ", units="mA.h", separator="")
-BatteryCapacity = HeaderField("Battery Capacity", units="mA.h")
+BatteryCapacity = HeaderField("Battery capacity", units="mA.h")
 # TODO: handle superscript? chr(178); 178=int("0x00B2", 0)
 ElectrodeSurfaceArea = HeaderField("Electrode surface area", units="cm²")
 CharacteristicMass = HeaderField("Characteristic mass", units="g")

@@ -52,7 +52,7 @@ class TechniqueSequence(list):
     def abbreviations(self):
         return [t.abbreviation for t in self]
 
-    def technique_text(self, index, configuration):
+    def technique_text(self, index):
         technique = self[index]
 
         # Header

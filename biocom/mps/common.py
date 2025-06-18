@@ -27,11 +27,19 @@ EweVs = SentenceCaseEnum('EweVs', ['REF', 'EOC', 'ECTRL', 'EMEAS'])
 # class EweVsEce(StrEnum):
 #     CE = 'CE'
     
+class ControlMode(StrEnum):
+    POT = "Potentiostatic"
+    GALV = "Galvanostatic"
+    
 
 class IVs(SentenceCaseEnum):
     NONE  = "<None>"
     ICTRL = auto()
     IMEAS = auto()
+    
+class TriggerType(StrEnum):
+    RISING = "Rising Edge"
+    FALLING = "Falling Edge"
     
 
 ChannelGrounding = SentenceCaseEnum("ChannelGrounding", ["FLOATING", "GROUNDED"])

@@ -3,7 +3,7 @@ from pathlib import Path
 from collections import namedtuple
 from typing import Union, Optional
 
-from .techniques.sequence import TechniqueSequence
+# from .techniques.sequence import TechniqueSequence
 
 from .common import (
     BLDeviceModel, CableType, ChannelGrounding, ElectrodeConnection, 
@@ -12,28 +12,27 @@ from .common import (
 )
 
 
-global _software_version
-global _server_version
-global _interpreter_version
+global SOFTWARE_VERSION
+global SERVER_VERSION
+global INTERPRETER_VERSION
 
-_software_version = '11.50'
-_server_version = '11.50'
-_interpreter_version = '11.50'
+SOFTWARE_VERSION = '11.50'
+SERVER_VERSION = '11.50'
+INTERPRETER_VERSION = '11.50'
 
 
-FullConfiguration = namedtuple(
-    'FullConfiguration', 
-    [
-        'basic',
-        'hardware',
-        'safety',
-        'recording',
-        'cell',
-        'sample',
-        'misc'
-    ]
-    )
-
+# FullConfiguration = namedtuple(
+#     'FullConfiguration', 
+#     [
+#         'basic',
+#         'hardware',
+#         'safety',
+#         'recording',
+#         'cell',
+#         'sample',
+#         'misc'
+#     ]
+#     )
 
 
 def set_versions(
@@ -47,13 +46,13 @@ def set_versions(
     biocom of the versions that you are using to ensure that headers are
     written correctly.
     """
-    global _software_version
-    global _server_version
-    global _interpreter_version 
+    global SOFTWARE_VERSION
+    global SERVER_VERSION
+    global INTERPRETER_VERSION 
     
-    _software_version = software
-    _server_version = server or software
-    _interpreter_version = interpreter or software
+    SOFTWARE_VERSION = software
+    SERVER_VERSION = server or software
+    INTERPRETER_VERSION = interpreter or software
 
 
 @dataclass
@@ -391,19 +390,19 @@ def set_misc_options(
 
 def set_defaults(
         device: BLDeviceModel,
-        technique_sequence: TechniqueSequence,
+        technique_sequence,
         sample_type: SampleType
     ):
     
-    global _software_version
-    global _server_version
-    global _interpreter_version
+    global SOFTWARE_VERSION
+    global SERVER_VERSION
+    global INTERPRETER_VERSION
 
     basic = set_basic_config(
         technique_sequence.num_techniques,
-        _software_version,
-        _server_version,
-        _interpreter_version,
+        SOFTWARE_VERSION,
+        SERVER_VERSION,
+        INTERPRETER_VERSION,
         settings_filename=None,  # Placeholder
         device=device
     )
@@ -425,17 +424,17 @@ def set_defaults(
     if sample_type == SampleType.CORROSION:
         sample = set_corrosion_characteristics()
     elif sample_type == SampleType.BATTERY:
-        sample = set_battery_characteristics
+        sample = set_battery_characteristics()
     elif sample_type == SampleType.MATERIALS:
         sample = set_materials_characteristics()
         
     return FullConfiguration(
         basic,
         hardware,
+        sample,
+        cell,
         safety,
         recording,
-        cell,
-        sample,
         misc
     )
     

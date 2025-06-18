@@ -13,8 +13,7 @@ from typing import Union, Optional, List
 from .stepwise import StepwiseTechniqueParameters
 from ... import units
 from ..common import (
-    IRange, EweVs, IVs, get_i_range, Bandwidth, Filter, SentenceCaseEnum
-)
+    IRange, EweVs, IVs, get_i_range, Bandwidth, Filter, SentenceCaseEnum, TriggerType)
 from ..config import FullConfiguration
 from .technique import (
     HardwareParameters, _hardware_param_map, _hardware_param_map_ilimit, _loop_param_map
@@ -170,12 +169,6 @@ class MBLimit(object):
        
         
     
-        
-    
-class MBTrigger(Enum):
-    RISING = "Rising Edge"
-    FALLING = "Falling Edge"
-    
 class MBRecordType(SentenceCaseEnum):
     TIME = auto()
     EWE = auto()
@@ -257,9 +250,9 @@ class MBParametersBase(object):
     ctrl_tM: int = 0
     ctrl_seq: int = 0
     ctrl_repeat: int = 0
-    ctrl_trigger: MBTrigger = MBTrigger.FALLING
+    ctrl_trigger: TriggerType = TriggerType.FALLING
     ctrl_TO_t: float = 0.0
-    ctrl_TO_t_unit: str = "d"
+    ctrl_TO_t_unit: str = "s"
     ctrl_Nd: int = 6
     ctrl_Na: int = 2
     ctrl_corr: int = 0
@@ -711,6 +704,7 @@ class MBPEIS(MBEISBase):
             f_max,
             f_min,
             ac_amp,
+            EISAmpUnit.V,
             ppd,
             limits,
             average
@@ -735,6 +729,18 @@ class MBRest(MBParametersBase):
 class MBLoop(MBParametersBase):
     def __init__(self, goto_seq: int, n_times: int):
         super().__init__(ctrl_type="Loop", ctrl_seq=goto_seq, ctrl_repeat=n_times)
+        
+# ==========================
+# Triggers
+# ==========================     
+class MBTriggerIn(MBParametersBase):
+    def __init__(self, edge=TriggerType.RISING):
+        super().__init__(ctrl_type="TI", ctrl_trigger=edge)
+        
+class MBTriggerOut(MBParametersBase):
+    def __init__(self, duration_s: float, edge=TriggerType.RISING):
+        scaled_duration, duration_unit = units.get_scaled_time(duration_s)
+        super().__init__(ctrl_type="TO", ctrl_TO_t=scaled_duration, ctrl_TO_t_unit=duration_unit, ctrl_trigger=edge)
         
         
     

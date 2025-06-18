@@ -51,7 +51,8 @@ def make_header(
          ]
     ):
         raise TypeError("sample_characteristics must be an instance of BatteryCharacteristics, "
-                        "CorrosionCharacteristics, or MaterialsCharacteristics")
+                        "CorrosionCharacteristics, or MaterialsCharacteristics. "
+                        f"Got type {type(sample_characteristics)}")
     
     device = basic_config.device
     
@@ -201,6 +202,9 @@ def write_techniques(
     configuration.basic.settings_filename = mps_file
         
     header_text = make_header(configuration)
+    
+    # Apply the configuration to any techniques that need the corresponding info
+    techniques.apply_configuration(configuration)
     
     with open(mps_file, 'w') as f:
         f.write(header_text)
