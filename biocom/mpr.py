@@ -8,7 +8,7 @@ from typing import Union
 from . import units
 from .utils import split_list
 
-def read_mpr(file: Union[str, Path], unscale: bool = False):
+def read_mpr(file: Union[str, Path], unscale: bool = False, error_on_unknown_column: bool = False) -> MPRfile:
     """Read a BioLogic .mpr data file and return an MPRfile object.
     
     :param file: Path to the .mpr file
@@ -19,7 +19,7 @@ def read_mpr(file: Union[str, Path], unscale: bool = False):
     :rtype: galvani.BioLogic.MPRfile
     """
     file = Path(file)
-    mpr = MPRfile(file.__str__())
+    mpr = MPRfile(file.__str__(), error_on_unknown_column=error_on_unknown_column)
     
     if unscale:
         # Convert all units to base units (remove m, k, mu, etc. scaling)
