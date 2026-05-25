@@ -398,7 +398,7 @@ def filter_chrono_signals(
         for j, (t_step, s_step) in enumerate(zip(t_steps, s_steps)):
             if first_step_steady and j == 0:
                 # Assume the initial step is at steady state and thus can be filtered with a uniform length scale
-                sigmas = np.full(len(t_step), max_sigma)
+                sigmas = np.full(len(t_step), min(max_sigma, len(t_step) / 10))
             else:
                 # Ideal sigma from inverse sqrt of maximum curvature of RC relaxation
                 sigma_ideal = np.exp(1) * (t_step - (t_step[0] - t_sample)) / 2
